@@ -1,43 +1,505 @@
-<!DOCTYPE HTML>
-<html   lang="en">
-    <head>
-        <meta charset = "UTF-8"/>
-        <title>Sıralı Listeleme</title>
-        
-    </head>
-    <body>
-        <h1>Bilişim Devleri</h1>
-        <!--Sıralı liste ol= ordered list // (ul) unordered sırarsız list-->
-        <ol type="1">
-            <li>
-                <h4>Microsoft</h4>
-            <ol type="i">
-                <li>Windows</li>
-                <li>Office</li>
-                <li>Visual Studio</li>
-            </ol>
-        </li>
-          <li>
-            <h4>Apple</h4>
-            <ol type="a">
-                <li>Macintosh</li>
-                <li>İphone</li>
-                <li>iPad</li>
-                </ol>
-            </li>
-            <li>
-                <h4>Google</h4> 
-                <ol type="I">
-                    <li>Android</li>
-                    <li>Search</li>
-                </li>
-        </ol> 
-        
-    </body> 
-    <form action="https://github.com/SuleymanDemirel" target="_blank">
-        <button type="submit">Deneme Button</button>
+<!DOCTYPE html>
+<html lang="tr">
 
-        <img src="
-        https://banner2.cleanpng.com/20180425/rse/kisspng-html-computer-icons-5ae0b5fc133303.8575417015246760920787.jpg" 
-        height="200" width="300"/>  
+<head>
+    <meta charset="utf-8" />
+    <title>Çekiliş Başlık</title>
+    <meta name="description" content="Çekiliş sayfası" />
+    <meta name="keywords" content="Çekiş,kazandıran,çekiliş sayfası" />
+    <meta name="keywords" content="Çekiş,kazandıran,çekiliş sayfası" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="style2.css" /> -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <link rel="icon" href="https://icons.iconarchive.com/icons/archigraphs/christmas/512/Present-icon.png"
+        type="image/x-icon" />
+
+    <style>
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 14px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: rgb(235, 235, 235);
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        #biletsayisi {
+            position: relative;
+            left: -120px;
+        }
+
+        .labelrenk {
+            color: rgb(2, 41, 148);
+        }
+
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #sayfa {
+            width: 960px;
+            min-height: 1530px;
+            border-style: solid;
+            border-width: 1px;
+            margin: auto;
+            /*nesneler ortalanıyor */
+            background-color: white;
+        }
+
+        #banner {
+            width: 700px;
+            min-height: 128px;
+            border-style: solid;
+            float: left;
+            border-width: 1px;
+            margin: auto;
+            /*nesneler ortalanıyor */
+        }
+
+        #icerik {
+            float: left;
+            width: 960px;
+            height: 1348px;
+            border-style: none;
+            border-width: 1px;
+            position: relative;
+            right: 3px;
+            left: 3px;
+            background-color: white;
+        }
+
+        #anamenu {
+            width: 960px;
+            height: 55px;
+            border-style: none;
+            float: left;
+            position: relative;
+
+
+        }
+
+        #yanmenu {
+            width: 255px;
+            height: 128px;
+            border-style: solid;
+            border-width: 1px;
+            float: right;
+            position: relative;
+            background-color: rgb(39, 39, 39);
+        }
+
+
+        .icerik {
+            background-color: white;
+            width: 200px;
+            height: 100px;
+            border: 1px none black;
+            overflow-y: scroll;
+            /* Add the ability to scroll */
+        }
+
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .icerik::-webkit-scrollbar {
+            display: none;
+            background-color: white;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .icerik {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+            background-color: white;
+        }
+        .btnstil{
+            overflow: hidden;
+            background-color: #333;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 5px 5px;
+            text-decoration: none;
+            font: 1;
+            width: 120px;
+        
+            position: relative;
+            top: 20px;
+        }
+        .btnstil a:hover {
+             background-color: rgb(235, 235, 235);
+             color: black;
+        }
+  
+    </style>
+
+</head>
+
+<body>
+
+    <div id="sayfa">
+        <header id="banner">
+            <div style="text-align: center">
+                <img src="https://i.hizliresim.com/ppPjtu.png" height="110" />
+            </div>
+        </header>
+        <aside id="yanmenu">
+            
+            <div style="text-align: center">
+                <img src=" https://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Places-user-identity-icon.png"
+                    height="125" width="95" style="float: left; border-style: solid;" />
+            </div>
+            
+            <strong style=" color: white; position: relative; top: 15px;">
+                <p style="color: turquoise; text-align: center;">Süleyman Demirel</p>
+                 </strong>
+                 <div style="text-align: center;">   
+                     
+                    <button class="fa fa-fw fa-money btnstil" style="text-align: center;"> Bakiye Ekle</button>    
+                   
+                    <button class="fa fa-fw fa-sign-out btnstil" style="text-align: center; top: 25px;"> Çıkış</button>    
+
+                 </div>
+                 
+        </aside>
+        <nav id="anamenu">
+            <div class="topnav text-center align-items-center" id="myTopnav">
+                <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Ana Sayfa</a>
+                <!-- <a href="#"><i class="fa fa-fw fa-user"></i> Profil</a> -->
+                <!-- <a href="#"><i class="fa fa-fw fa-money"></i> Bakiye Ekle</a> -->
+                <a href="#"><i class="fa fa-fw fa-envelope"></i> İletişim</a>
+                <a href="#"><i class="fa fa-fw fa-youtube"></i> Youtube</a>
+                <a href="#"><i class="fa fa-fw fa-twitter"></i> Twitter</a>
+                <a href="#"><i class="fa fa-fw fa-instagram"></i> İnstagram</a>
+                <a href="#"><i class="fa fa-fw fa-question"></i> Sıkça Sorulan Sorular</a>
+                <a href="#"><i class="fa fa-fw fa-address-book"></i> Hakkımızda</a>
+
+            </div>
+        </nav>
+
+        <br>
+
+        <article id="icerik" class="icerik">
+
+            <table class="table table-striped table-bordered table-hover table">
+                <thead>
+
+                    <tr class="  text-center " style="background-color: #333">
+                        <td COLSPAN="2" class="col-md-4" style="  color: white "> <strong>Ürünler</strong> </td>
+
+
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="card text-center">
+                                <div style="text-align: center;">
+                                    <img src="https://ofisel.com/73308-big_default/xprime-plus-oyuncu-koltugu-turkuaz.jpg"
+                                        width="300" height="300">
+
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text "> <strong>XPrime Plus Oyuncu Koltuğu Turkuaz</strong></p>
+
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-striped" style="width:80%">80%</div>
+                                    </div>
+                                    <br>
+                                    <div class="form-group text-center">
+                                        <label for="biletsayisi" class="labelrenk"> <strong>Bilet Sayısı
+                                                :</strong></label>
+                                        <input type="text" class="form-control " id="biletsayisi" placeholder="0"
+                                            style=" width: 60px; height: 27px; float: right;">
+                                    </div>
+                                    <br>
+                                    <div class=" align-items-center">
+
+                                        <div class="btn-group  ">
+                                            <button type="button" class="btn btn-danger " style=" width: 150px;">
+                                                <strong>Çekilişe Katıl</strong> </button>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </td>
+                        <td>
+                            <div class="col text-center">
+
+                                <div class="card ">
+                                    <div style="text-align: center;">
+                                        <img src="https://i.hizliresim.com/CYuvjr.jpg" width="300" height="300">
+                                    </div>
+                                    <div class="card-body">
+                                        <p"> <strong>MF Product Wear 0071 Akıllı Bileklik
+                                                Mavi</strong></p>
+                                            <div class="progress">
+                                                <div class="progress-bar progress-bar-striped" style="width:5%">0%</div>
+                                            </div>
+                                            <br>
+                                            <div class="form-group text-center">
+                                                <label for="biletsayisi" class="labelrenk"> <strong>Bilet Sayısı
+                                                        :</strong></label>
+                                                <input type="text" class="form-control " id="biletsayisi"
+                                                    placeholder="0" style=" width: 60px; height: 27px; float: right;">
+                                            </div>
+                                            <br>
+                                            <div class=" align-items-center">
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-danger "
+                                                        style=" width: 150px;">
+                                                        <strong>Çekilişe Katıl</strong> </button>
+
+                                                </div>
+
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+
+    </div>
+    </td>
+
+
+
+    </tr>
+    <tr>
+        <td>
+            <div class="col text-center">
+                <div class="card ">
+                    <div style="text-align: center;">
+                        <img src="https://www.incehesap.com/resim/urun/202005/5ecf7b202b1cb3.63625786_kfhmqjelnopig_500.jpg"
+                            width="300" height="300">
+                    </div>
+                    <div class="card-body">
+                        <p class="text-center"> <strong>SteelSeries Apex 3 RGB TR Q Gaming Klavye</strong> </p>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped" style="width:5%">0%</div>
+                        </div>
+                        <br>
+                        <div class="form-group text-center">
+                            <label for="biletsayisi" class="labelrenk"> <strong>Bilet Sayısı :</strong></label>
+                            <input type="text" class="form-control " id="biletsayisi" placeholder="0"
+                                style=" width: 60px; height: 27px; float: right;">
+                        </div>
+                        <br>
+                        <div class=" align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-danger " style="width: 150px;"> <strong>Çekilişe
+                                        Katıl</strong> </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </td>
+        <td>
+            <div class="col text-center">
+                <div class="card ">
+                    <div style="text-align: center;">
+                        <img src="https://cdn.dsmcdn.com/ty51/product/media/images/20210112/6/51476075/69273367/1/1_org_zoom.jpg"
+                            width="300" height="300">
+                    </div>
+
+                    <div class="card-body">
+                        <p class=" text-center"> <strong>JBL T700bt Bluetooth Kulaklık - Siyah</strong> </p>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped" style="width:5%">0%</div>
+                        </div>
+                        <br>
+                        <div class="form-group text-center">
+                            <label for="biletsayisi" class="labelrenk"> <strong>Bilet Sayısı :</strong></label>
+                            <input type="text" class="form-control " id="biletsayisi" placeholder="0"
+                                style=" width: 60px; height: 27px; float: right;">
+                        </div>
+                        <br>
+                        <div class=" align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-danger " style="width: 150px;"> <strong>Çekilişe
+                                        Katıl</strong> </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </td>
+
+    </tr>
+    <td>
+        <div class="card text-center">
+            <div style="text-align: center;">
+                <img src="https://cdn.dsmcdn.com/ty33/product/media/images/20201214/13/38367957/119156578/6/6_org_zoom.jpg"
+                    width="300" height="300">
+            </div>
+            <div class="card-body">
+                <p> <strong>Logitech G502 SE Gaming Oyuncu Mouse </strong></p>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped" style="width:5%">0%</div>
+                </div>
+                <br>
+                <div class="form-group text-center">
+                    <label for="biletsayisi" class="labelrenk"> <strong>Bilet Sayısı :</strong></label>
+                    <input type="text" class="form-control " id="biletsayisi" placeholder="0"
+                        style=" width: 60px; height: 27px; float: right;">
+                </div>
+                <br>
+                <div class=" align-items-center">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-danger " style="width: 150px;"> <strong>Çekilişe
+                                Katıl</strong> </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </td>
+    <td>
+        <div class="col text-center">
+            <div class="card ">
+                <div style="text-align: center;">
+                    <img src="https://i.hizliresim.com/t4vMRQ.png" width="300" height="300">
+                </div>
+
+                <div class="card-body">
+                    <p class=" text-center"> <strong>Logitech G G432 Oyuncu Kulaglığı</strong>
+                    </p>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped" style="width:5%">0%</div>
+                    </div>
+                    <br>
+                    <div class="form-group text-center">
+                        <label for="biletsayisi" class="labelrenk"> <strong>Bilet Sayısı :</strong></label>
+                        <input type="text" class="form-control " id="biletsayisi" placeholder="0"
+                            style=" width: 60px; height: 27px; float: right;">
+                    </div>
+                    <br>
+                    <div class=" align-items-center">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-danger " style="width: 150px;"> <strong>Çekilişe
+                                    Katıl</strong> </button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </td>
+    <tr>
+        <td>
+            <div class="card text-center">
+                <div style="text-align: center;">
+                    <img src="https://ofisel.com/73308-big_default/xprime-plus-oyuncu-koltugu-turkuaz.jpg" width="300"
+                        height="300">
+
+                </div>
+                <div class="card-body">
+                    <p class="card-text "> <strong>XPrime Plus Oyuncu Koltuğu Turkuaz</strong></p>
+
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped" style="width:80%">80%</div>
+                    </div>
+                    <br>
+                    <div class="form-group text-center">
+                        <label for="biletsayisi" class="labelrenk"> <strong>Bilet Sayısı :</strong></label>
+                        <input type="text" class="form-control " id="biletsayisi" placeholder="0"
+                            style=" width: 60px; height: 27px; float: right;">
+                    </div>
+                    <br>
+                    <div class=" align-items-center">
+
+                        <div class="btn-group  ">
+                            <button type="button" class="btn btn-danger " style=" width: 150px;">
+                                <strong>Çekilişe Katıl</strong> </button>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </td>
+
+        <td>
+            <div class="col text-center">
+                <div class="card ">
+                    <div style="text-align: center;">
+                        <img src="https://i.hizliresim.com/t4vMRQ.png" width="300" height="300">
+                    </div>
+
+                    <div class="card-body">
+                        <p class=" text-center"> <strong>Logitech G G432 Oyuncu Kulaglığı</strong>
+                        </p>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped" style="width:5%">0%</div>
+                        </div>
+                        <br>
+                        <div class="form-group text-center">
+                            <label for="biletsayisi" class="labelrenk"> <strong>Bilet Sayısı :</strong></label>
+                            <input type="text" class="form-control " id="biletsayisi" placeholder="0"
+                                style=" width: 60px; height: 27px; float: right;">
+                        </div>
+                        <br>
+                        <div class=" align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-danger " style="width: 150px;"> <strong>Çekilişe
+                                        Katıl</strong> </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+
+    </table>
+
+
+    </article>
+
+
+    </div>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+    integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+    integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+    crossorigin="anonymous"></script>
+
 </html>
